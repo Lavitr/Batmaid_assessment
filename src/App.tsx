@@ -9,11 +9,11 @@ const App: FC<{}> = (): ReactElement => {
   const dataPrev = useAppSelector((state) => state.data.dataPrev);
   const dataNext = useAppSelector((state) => state.data.dataNext);
   const isPrevJobs = useAppSelector((state) => state.switch.isPrevJobs);
-  const status = useAppSelector((state) => state.data.loading);
+  const { status } = useAppSelector((state) => state.data);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (!status) {
+    if (status === "idle") {
       dispatch(getData());
     }
   }, [dispatch]);

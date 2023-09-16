@@ -13,14 +13,14 @@ export const sortStrings = (a: Job, b: Job): number => {
 export const isNextDate = (date: string): boolean =>
   new Date() <= new Date(date);
 
-enum Repetition {
+export enum Repetition {
   Weekly = "Weekly",
   Monthly = "Monthly",
   TwoWeek = "Every two weeks",
 }
 
 const DAY_IN_WEEK = 7;
-const DAY_IN_TWO_WEEK = 7;
+const DAY_IN_TWO_WEEK = 14;
 
 export const getRepetitionString = (repetition: number) =>
   repetition === DAY_IN_WEEK

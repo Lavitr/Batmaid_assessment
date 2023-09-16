@@ -52,3 +52,7 @@ button {
 .job-type::first-letter {
   text-transform: capitalize;
 }
+
+td p {
+  margin: 6px 0;
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "uuid": "b030878f-de83-4c49-a297-bb3540349579",
+    "amount": 96,
+    "currency": "CHF",
+    "executionDate": "2023-10-27 08:30",
+    "agent": "Oliveira Agent",
+    "contractPeriodicity": 14,
+    "floorAndDoor": "",
+    "locationComment": "foo bar",
+    "type": "HOME_CLEANING",
+    "duration": 3,
+    "location": "A",
+    "locationUuid": "9316889e-17ef-4ef6-a5e3-d487ed589d2d"
+  },
+  {
+    "uuid": "tc30548f-fe83-3c47-bb97-dd3540349565",
+    "amount": 96,
+    "currency": "CHF",
+    "executionDate": "2023-10-28 08:30",
+    "agent": "Oliveira Agent",
+    "contractPeriodicity": 14,
+    "floorAndDoor": "",
+    "locationComment": "foo bar",
+    "type": "END_OF_TENANCY",
+    "duration": 3,
+    "location": "B",
+    "locationUuid": "9316889e-17ef-4ef6-a5e3-d487ed589d2d"
+  }
+]

@@ -1,7 +1,7 @@
 import { renderWithProviders } from "./test-utils";
 import App from "../App";
 
-test("renders CleaningsTable", () => {
+test("renders App", () => {
   const screen = renderWithProviders(<App />, {
     preloadedState: {
       data: {

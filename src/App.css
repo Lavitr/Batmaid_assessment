@@ -1,42 +1,54 @@
 .App {
+  margin: 30px auto;
+  width: 80%;
+  border: 8px solid #f2f3f3;
   text-align: center;
+  border-top: 4px solid #f2f3f3;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button.active {
+  background-color: #21a7d1;
+  color: #fff;
+}
+.job-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 22px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.row-top-border {
+  border-top: 2px solid #f2f3f3;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h3,
+.twin-buttons {
+  text-align: start;
 }
 
-.App-link {
-  color: #61dafb;
+h3 {
+  font-weight: 600;
+  font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  border: 1px solid #21a7d1;
+  color: #21a7d1;
+  background-color: #fff;
+  font-weight: 600;
+  font-family: sans-serif;
+  padding: 12px;
 }
 
-.active {
-  background-color: aqua;
+.twin-buttons button:first-child {
+  border-right: unset;
+  border-radius: 3px 0 0 3px;
+}
+
+.twin-buttons button:nth-child(2) {
+  border-radius: 0 3px 3px 0;
+}
+
+.job-type::first-letter {
+  text-transform: capitalize;
 }

@@ -1,10 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+export interface SwitchState {
+  isPrevJobs: boolean;
+}
+
+const initialState: SwitchState = {
+  isPrevJobs: false,
+};
+
 export const switchSlice = createSlice({
   name: "switch",
-  initialState: {
-    isPrevJobs: false,
-  },
+  initialState,
   reducers: {
     setPrevJobs: (state) => {
       state.isPrevJobs = true;
@@ -17,4 +23,4 @@ export const switchSlice = createSlice({
 
 export const { setPrevJobs, setNextJobs } = switchSlice.actions;
 
-export const switchReducer =  switchSlice.reducer;
+export const switchReducer = switchSlice.reducer;

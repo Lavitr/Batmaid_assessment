@@ -1,7 +1,8 @@
+import { FC, ReactElement } from "react";
 import { setPrevJobs, setNextJobs } from "../redux/reducerSlice";
 import { useAppSelector, useAppDispatch } from "../redux/hooks";
 
-function TwinButton() {
+const TwinButton: FC<{}> = (): ReactElement => {
   const isPrevJobs = useAppSelector((state) => state.switch.isPrevJobs);
   const dispatch = useAppDispatch();
 
@@ -21,6 +22,6 @@ function TwinButton() {
       </button>
     </div>
   );
-}
+};
 
 export default TwinButton;

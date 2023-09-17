@@ -2,18 +2,23 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { sortStrings, isNextDate } from "../utils/helpers";
 import { Data, Job } from "../types";
 
+export enum Status {
+  idle = "idle",
+  loading = "loading",
+  complete = "complete",
+}
+
 export interface DataState {
   dataNext: Job[];
   dataPrev: Job[];
-  status: 'idle' | 'loading' | 'complete'
+  status: "idle" | "loading" | "complete";
   error?: string;
 }
 
 const initialState: DataState = {
   dataNext: [],
   dataPrev: [],
-  status: 'idle',
-  error: "",
+  status: "idle",
 };
 
 export const getData = createAsyncThunk(
@@ -32,19 +37,21 @@ const dataSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getData.pending, (state) => {
-      state.status = 'loading'
+      state.status = Status.loading;
     });
     builder.addCase(getData.fulfilled, (state, action: PayloadAction<Data>) => {
-      state.status = 'complete'
-      state.dataNext = action.payload.jobs
-        .filter((job: Job) => isNextDate(job.executionDate))
-        .sort((a: Job, b: Job) => sortStrings(a, b));
-      state.dataPrev = action.payload.jobs
-        .filter((job: Job) => !isNextDate(job.executionDate))
-        .sort((a: Job, b: Job) => sortStrings(a, b));
+      state.status = Status.complete;
+      if (action.payload.jobs) {
+        state.dataNext = action.payload.jobs
+          .filter((job: Job) => isNextDate(job.executionDate))
+          .sort((a: Job, b: Job) => sortStrings(a, b));
+        state.dataPrev = action.payload.jobs
+          .filter((job: Job) => !isNextDate(job.executionDate))
+          .sort((a: Job, b: Job) => sortStrings(a, b));
+      }
     });
     builder.addCase(getData.rejected, (state, action) => {
-      state.status = 'complete'
+      state.status = Status.complete;
       state.error = action.error.message;
     });
   },

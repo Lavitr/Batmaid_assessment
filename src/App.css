@@ -56,3 +56,21 @@ button {
 td p {
   margin: 6px 0;
 }
+
+.error-message {
+  text-align: center;
+  color: red;
+  font-weight: 400;
+  font-family: serif;
+}
+
+.error-hint {
+  font-size: 20px;
+  font-weight: 400;
+  color: #21a7d1;
+}
+
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+}

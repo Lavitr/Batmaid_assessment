@@ -1,5 +1,5 @@
 import { FC, ReactElement } from "react";
-import { setPrevJobs, setNextJobs } from "../redux/reducerSlice";
+import { setPrevJobs, setNextJobs } from "../redux/switchSlice";
 import { useAppSelector, useAppDispatch } from "../redux/hooks";
 
 const TwinButton: FC<{}> = (): ReactElement => {

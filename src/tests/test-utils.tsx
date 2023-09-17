@@ -5,7 +5,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import type { PreloadedState } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import dataReducer from "../redux/dataSlice";
-import { switchReducer } from "../redux/reducerSlice";
+import { switchReducer } from "../redux/switchSlice";
 
 import type { AppStore, RootState } from "../redux/store";
 interface ExtendedRenderOptions extends Omit<RenderOptions, "queries"> {

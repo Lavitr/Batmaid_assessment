@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import dataReducer from "./dataSlice";
-import { switchReducer } from "./reducerSlice";
+import { switchReducer } from "./switchSlice";
 
 export const store = configureStore({
   reducer: {
